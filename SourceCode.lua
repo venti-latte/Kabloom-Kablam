@@ -1,10 +1,3 @@
--- LOCAL VARIABLES --
--- Create local variables for the Discord and Orion libraries
-local DiscordLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/ManticoreV101/ND-GUIs/main/UI%20Backups/Discord%20UI%20Library%20Backup.lua"))()
-local OrionLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/ManticoreV101/ND-GUIs/main/UI%20Backups/Orion%20UI%20Library%20Backup.lua"))()
-
--- Get the Players service and Animate object
-
 local Players = game:GetService("Players")
 local Animate = Players.LocalPlayer.Character.Animate
 
