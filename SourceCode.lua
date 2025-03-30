@@ -5,7 +5,7 @@ local Animate = Players.LocalPlayer.Character.Animate
 local ReplicatedStorage = game:GetService"ReplicatedStorage"
 
 -- Create a local variable for the ChatEvent object
-local ChatEvent = ReplicatedStorage.DefaultChatSystemChatEvents
+local TextChatService = game:GetService("TextChatService")
 
 -- FUNCTIONS --
 local function CreateNotification(content, image, time)
@@ -18,11 +18,10 @@ local function CreateNotification(content, image, time)
 end
 
 local function Chat(message)
-	local args = {
-		[1] = message,
-		[2] = "All"
-	}
-	ChatEvent.SayMessageRequest:FireServer(unpack(args))
+    local channel = TextChatService.TextChannels.RBXGeneral -- Use the "RBXGeneral" channel
+    if channel then
+        channel:SendAsync(message) -- Send the message to the channel
+    end
 end
 
 
